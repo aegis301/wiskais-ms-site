@@ -1,7 +1,7 @@
 baseURL: ''
-title: TailBliss
-languageCode: en-us
-DefaultContentLanguage: en
+title: MSREP
+languageCode: de
+DefaultContentLanguage: de
 enableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
@@ -47,54 +47,58 @@ markup:
       xhtml: false
 
 params:
-  author: Nusser Studios
-  authorimage: ../assets/images/global/author.webp
-  og_image: /images/tailbliss-cover.png
-  moto: "Super Fast, and Flexible"
-  description: "A Hugo theme built with love, using TailwindCSS 3, Alpine.JS, and Hugo Pipes. Images are optimized for use with Hugo Pipes for WebP format."
+  author: Christian Porschen
+  authorimage: ../assets/images/global/Logo.webp
+  og_image: 
+  moto: "Repititoriumsveranstaltungen Münster"
+  description: "Website der münsteraner Anästhesie- und Intensivmedizin Repetitorien."
   disable_theme_toggle: false
   disable_stay_uptodate: false
 
   p1:
-    heading: "Our mission"
-    image: "images/pages/our-mission.png"
+    heading: "Wer wir sind"
+    image: "images/pages/monitor.jpg"
     content:
-      - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae fames senectus vitae."
-      - text: "Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna. Sollicitudin tristique eroserat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna."
-      - text: "Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra."
+      - text: "Hier könnten wir lang und breit beschreiben wer wir sind und was wir tun. Insbesondere, dass wir wirklich ganz ganz toll sind und sehr gut lange Texte schreiben können."
+      - text: "Also wirklich, ganz toll. Und unsere Redner erst, die sind noch besser."
   p2:
-    heading: "Just in time for Hacktoberfest with JIT Tailwind."
-    image: "images/pages/hacktoberfest.jpg"
+    heading: "Was wir machen"
+    image: "images/pages/spritzen.jpg"
     content:
-      - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at purus non enim commodo tincidunt vel in nulla. Aenean pretium dolor non ultricies bibendum. Etiam quis blandit enim. Nunc condimentum ut lorem in faucibus. Phasellus varius ligula et commodo tristique. Nunc sodales nisl nec laoreet vehicula. Donec velit nibh, sollicitudin at nulla a, egestas dignissim eros. Sed lacinia hendrerit interdum. Vestibulum pellentesque sem venenatis nisl tempor accumsan sit amet tempus felis. Mauris leo diam, porttitor nec bibendum id, tempus ac nulla. Etiam congue ornare erat at convallis. Donec in nisi dapibus, mattis risus vel, imperdiet enim. Donec fermentum sit amet tortor nec tincidunt. Nam nec lectus tortor. Nunc sit amet laoreet orci, porta ornare massa. Phasellus eget lorem mi. Nam eleifend ultricies sapien, quis mollis leo bibendum at. Quisque viverra lorem sit amet magna aliquet, et dignissim arcu eleifend."
+      - text: "Hier könnten wir z.B. sehr lang und sehr breit erklären was wir eigentlich machen. Dass wir zum Beispiel ganz tolle Repetitorien veranstalten, mit noch tolleren Vorträgen. Vielleicht können wir das ganze auch als Website des WISKAIS selbst aufziehen."
   p3:
-    heading: "Backed by world-renowned investors"
+    heading: "Referent:innen aus ganz Deutschland"
     content:
-      - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae fames senectus vitae."
+      - text: "Bei uns treten ganz ganz tolle Referent:innen aus ganz Deutschland auf. Wir haben sowieso die besten Referent:innen allerzeiten. Jemals."
     links:
-      - text: Meet our investors and advisors
+      - text: Melden Sie sich an 
         url: "#"
     logos:
       - identifier: a
-        image: "images/global/sample-logo.svg"
+        image: "images/global/Universitätsklinikum_Münster_Logo.svg"
         alt: "a"
       - identifier: b
+        image: "images/global/Universitätsklinikum_Aachen_Logo.svg"
       - identifier: c
+        image: "images/global/Logo_UKSH.svg"
       - identifier: d
+        image: "images/global/Logo_Charite.svg"
       - identifier: e
+        image: "images/global/Klinikum_rechts_der_Isar_logo.svg"
       - identifier: f
+        image: "images/global/Logo_University_Hospital_Dresden_2024-06-01.svg"
   p4:
-    heading: "From the blog"
+    heading: "Aus unserem Blog"
     content:
-      - text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed."
+      - text: "Unser ganz ganz toller Blog auf dem wir tolle und intelligente Dinge posten."
   p5:
-    heading: "Stay Up to Date"
+    heading: "Melden Sie sich für unseren Newsletter an"
     content:
-      - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque."
+      - text: "Unser ganz toller und ganz intelligenter Newsletter. Wir nerven auch nicht, versprochen."
     action: "#"
-    label: "Email address"
-    placeholder: "Enter your email"
-    button: "Notify me"
+    label: "Email Adresse"
+    placeholder: "Email Adresse"
+    button: "Newsletter bestellen"
 
   social_media:
     github:
@@ -113,57 +117,54 @@ params:
 
 menu:
   main:
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 10
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 20
-    - identifier: categories
-      pre: dropdown
-      name: Categories
-      weight: 30
-    - identifier: dropdown
+    - identifier: info
       pre: complexdropdown
-      name: Dropdown
+      name: Info
+      weight: 10
+    - identifier: reps
+      pre: complexdropdown
+      name: Repetitorien
+      weight: 30
+    - identifier: registration
+      name: Registrierung
+      url: /registration/
       weight: 40
     - identifier: contact
-      name: Contact
+      name: Kontakt
       url: /contact/
       weight: 50
-  categories:
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 10
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 20
-  dropdown:
-    - identifier: appearance
+  reps:
+    - identifier: anesthesiology
       pre: stars # can be stars, comments or piechart
-      name: Appearance
-      post: "Easy customization"
+      name: Anästhesie
+      post: "Das Anästhesierepetitorium"
       url: "#"
       weight: 10
-    - identifier: comments
+    - identifier: intensive
       pre: comments # can be stars, comments or piechart
-      name: Comments
-      post: "Check your latest comments"
+      name: Intensivmedizin
+      post: "Das intensivmedizinische Repetitorium"
       url: "#"
       weight: 20
-    - identifier: analytics
-      pre: piechart # can be stars, comments or piechart
-      name: Analytics
-      post: "Take a look at your statistics"
-      url: "#"
+  info:
+    - identifier: about
+      pre: stars
+      name: Über uns
+      url: /about/
+      weight: 10
+    - identifier: blog
+      pre: piechart
+      name: Blog
+      url: /categories/blog
+      weight: 20
+    - identifier: news
+      pre: comments
+      name: News
+      url: /categories/news
       weight: 30
   footer:
     - identifier: about
-      name: About
+      name: Über uns
       url: /about/
       weight: 10
     - identifier: blog
@@ -171,17 +172,17 @@ menu:
       url: /categories/blog/
       weight: 20
     - identifier: news
-      name: News
+      name: Neuigkeiten
       url: /categories/news/
       weight: 30
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 40
     - identifier: contact
-      name: Contact
+      name: Kontakt
       url: /contact/
       weight: 50
+    - identifier: data-protection
+      name: Datenschutzerklärung
+      url: /data-protection/
+      weight: 20
 
 markup:
   goldmark:

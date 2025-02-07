@@ -15,7 +15,7 @@
                     </p>
                 </div>
                 <div class="col-span-6">
-                    {{ $hero := resources.GetMatch "images/pages/tailbliss-rocket-indigo.png" }}
+                    {{ $hero := resources.GetMatch "images/pages/beutel.jpg" }}
 
                     {{ $thumb := ($hero.Fill "400x400 webp q90") }}
                     {{ $large := ($hero.Fill "576x576 webp q90") }}
@@ -129,7 +129,7 @@
                     {{ $sponsor := resources.Get .image }}
                     <img src="{{ $sponsor.RelPermalink }}" class="max-h-12 dark:invert" alt="{{ .alt }}" loading="lazy" />
                     {{ else }}
-                    {{ $sponsor := resources.Get "images/global/sample-logo.svg" }}
+                    {{ $sponsor := resources.Get "images/global/Logo.svg" }}
                     <img src="{{ $sponsor.RelPermalink }}" class="max-h-12 dark:invert" alt="{{ .alt }}" loading="lazy" />
                     {{ end }}
                 </div>
