@@ -1,46 +1,37 @@
-name: Build and Deploy Hugo Site (Production)
+name: Build and Deploy Hugo Site
 
 on:
   push:
     branches:
-      - main  # or whichever branch you use
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
+      # Step 1: Check out your code
       - name: Checkout
         uses: actions/checkout@v3
 
-      # 2. Install dependencies & build
+      # Step 2: Install Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
+      # Step 3: Install dependencies & build your site
       - name: Install & Build
         run: |
           npm install
           npm run build
-        # This should produce your static site in ./public or a similar folder
 
-      # 3. Upload the static files (e.g. /public) to the server
+      # Step 4: Deploy to your server (via SCP)
       - name: Upload Files via SCP
         uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          source: "./public/*"   # or wherever your final build outputs
+          source: "./public/*"
           target: "/var/www/msrepsitetest"
-
-      # 4. (Optional) SSH commands
-      # Not strictly necessary if you're just serving static files via Nginx
-      - name: SSH to Server
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: |
-            sudo chown -R www-data:www-data /var/www/msrepsitetest
-            sudo chmod -R 755 /var/www/msrepsitetest
-
-            sudo systemctl reload nginx
