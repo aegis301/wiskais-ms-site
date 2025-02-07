@@ -22,8 +22,8 @@ jobs:
       # 2. Install dependencies & build
       - name: Install & Build
         run: |
-          npm install
-          npm run build
+          sudo npm install
+          sudo npm run build
         # This should produce your static site in ./public or a similar folder
 
       # 3. Upload the static files (e.g. /public) to the server
