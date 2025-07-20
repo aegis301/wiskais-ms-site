@@ -1,12 +1,17 @@
 {
-  "name": "nextjs-site",
-  "version": "0.1.0",
+  "name": "msrep-nextjs-site",
+  "version": "2.0.0",
+  "description": "MSREP - Repetitoriumsveranstaltungen Münster Website",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next",
+    "export": "next build && next export"
   },
   "dependencies": {
     "react": "19.1.0",
@@ -23,5 +28,17 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
     "@eslint/eslintrc": "^3"
-  }
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "medical",
+    "repetitorium",
+    "anesthesiology",
+    "intensive-care"
+  ],
+  "author": "Christian Porschen",
+  "license": "MIT"
 }
