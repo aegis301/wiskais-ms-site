@@ -25,8 +25,8 @@ const events: Event[] = [
     location: "Münster & Online",
     description: "Unser Hauptrepetitorium für alle Ärztinnen und Ärzte in der Weiterbildung zum Facharzt/zur Fachärztin für Anästhesiologie. Präsenz- und Online-Teilnahme möglich.",
     image: "/images/pages/monitor.jpg",
-    status: "upcoming",
-    registrationOpen: true,
+    status: "completed",
+    registrationOpen: false,
   },
   {
     id: "intensivmedizin-2025",
@@ -35,7 +35,7 @@ const events: Event[] = [
     location: "Münster",
     description: "Spezialisiertes Repetitorium für Intensivmedizin mit praktischen Workshops und Fallbesprechungen.",
     image: "/images/pages/spritzen.jpg",
-    status: "upcoming",
+    status: "ongoing",
     registrationOpen: true,
   },
   {
