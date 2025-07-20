@@ -103,8 +103,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const event = events[params.id];
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const event = events[id];
   
   if (!event) {
     return {
@@ -118,8 +119,9 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default function EventDetail({ params }: { params: { id: string } }) {
-  const event = events[params.id];
+export default async function EventDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const event = events[id];
 
   if (!event) {
     notFound();

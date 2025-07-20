@@ -26,9 +26,8 @@ export default function Navigation() {
           <button 
             className="rounded-lg md:hidden focus:outline-none focus:shadow-outline" 
             onClick={() => setIsOpen(!isOpen)}
-            role="navigation" 
             aria-expanded={isOpen}
-            aria-label="Main" 
+            aria-label="Toggle navigation menu"
             aria-controls="menuItems"
           >
             <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">

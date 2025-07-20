@@ -61,7 +61,7 @@ export default function About() {
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <p className="text-lg text-blue-800 font-medium">
-                Die Veranstaltung ist im Rahmen der „Zertifizierung der ärztlichen Fortbildung" der 
+                Die Veranstaltung ist im Rahmen der &ldquo;Zertifizierung der ärztlichen Fortbildung&rdquo; der 
                 Ärztekammer Westfalen-Lippe anerkannt.
               </p>
             </div>
