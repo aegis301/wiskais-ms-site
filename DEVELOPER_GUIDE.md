@@ -22,7 +22,7 @@ The MSREP website is a modern web application built with Next.js 14, TypeScript,
 ## Project Structure
 
 ```plaintext
-nextjs-site/
+msrep-site/
 ├── src/
 │   ├── app/                    # App Router pages
 │   │   ├── about/              # About page

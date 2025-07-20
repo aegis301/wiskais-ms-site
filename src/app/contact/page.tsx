@@ -100,11 +100,11 @@ export default function Contact() {
                 </h3>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <p className="text-gray-700 mb-2">
-                    <strong>Dr. med. Christian Porschen</strong><br />
+                    <strong>Dr. med. Max Mustermann</strong><br />
                     Organisationsleitung
                   </p>
                   <p className="text-gray-700">
-                    <strong>Prof. Dr. med. [Name]</strong><br />
+                    <strong>Prof. Dr. med. Tina Musterfrau</strong><br />
                     Wissenschaftliche Leitung
                   </p>
                 </div>
