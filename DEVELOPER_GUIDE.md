@@ -59,7 +59,7 @@ msrep-site/
 
    ```bash
    git clone <repository-url>
-   cd msrep-site/nextjs-site
+   cd msrep-site
    ```
 
 2. **Install dependencies**

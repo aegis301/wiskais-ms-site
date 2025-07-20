@@ -5,6 +5,23 @@ All notable changes to the MSREP website project will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-07-20
+
+### Changed
+
+- **Project Structure Simplification**
+  - Moved all Next.js files from `nextjs-site/` subdirectory to root level
+  - Retired Hugo folder to separate branch
+  - Simplified development workflow with single-level project structure
+  - Updated documentation to reflect new folder structure
+
+### Improved
+
+- **Component Architecture**
+  - Extracted EventCard component for better code organization
+  - Created centralized type definitions in `/src/types/`
+  - Improved code readability and maintainability
+
 ## [2.0.0] - 2025-07-17
 
 ### Added

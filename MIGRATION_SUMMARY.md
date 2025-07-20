@@ -81,17 +81,19 @@
 ### File Structure Overview
 
 ```
-msrep-site/
-├── hugo/                     # Original Hugo files (preserved)
-├── nextjs-site/             # New Next.js application
-│   ├── src/
-│   │   ├── app/            # App Router pages
-│   │   └── components/     # Reusable components
-│   ├── public/             # Static assets
-│   └── package.json        # Dependencies and scripts
-├── CHANGELOG.md            # Detailed change log
-└── DEVELOPER_GUIDE.md      # Comprehensive documentation
+msrep-site/                   # Root project directory
+├── src/
+│   ├── app/                # App Router pages
+│   ├── components/         # Reusable components
+│   └── types/             # TypeScript definitions
+├── public/                 # Static assets
+├── package.json           # Dependencies and scripts
+├── CHANGELOG.md           # Detailed change log
+├── DEVELOPER_GUIDE.md     # Comprehensive documentation
+└── MIGRATION_SUMMARY.md   # This file
 ```
+
+**Note**: The project structure has been simplified - all Next.js files are now at the root level. The original Hugo files have been moved to a separate branch.
 
 ### Important Notes
 
@@ -100,12 +102,10 @@ The new Next.js application requires Node.js 18.18.0 or higher. The current syst
 
 ### Next Steps for Deployment
 
-1. **Update Node.js**
+1. **Install and Run**
 
    ```bash
-   # Update Node.js to version 18 or higher
-   # Then run:
-   cd nextjs-site
+   # Run from the root directory:
    npm install
    npm run build
    npm start
