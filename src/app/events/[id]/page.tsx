@@ -1,24 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { DetailedEvent} from "@/types";
 
-interface Event {
-  id: string;
-  title: string;
-  date: string;
-  location: string;
-  description: string;
-  longDescription: string;
-  image: string;
-  status: "upcoming" | "ongoing" | "completed";
-  registrationOpen: boolean;
-  speakers: string[];
-  topics: string[];
-  schedule: { time: string; topic: string; speaker: string }[];
-  price: { presence: number; online: number };
-}
-
-const events: { [key: string]: Event } = {
+const events: { [key: string]: DetailedEvent } = {
   "anaesthesie-2025": {
     id: "anaesthesie-2025",
     title: "Repetitorium Anästhesiologie 2025",
