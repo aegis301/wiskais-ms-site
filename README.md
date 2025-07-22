@@ -44,6 +44,7 @@ For detailed development documentation, see [DEVELOPER_GUIDE.md](./DEVELOPER_GUI
 ### Quick Start
 
 1. **Clone and install**
+
    ```bash
    git clone <repository-url>
    cd msrep-site
@@ -51,6 +52,7 @@ For detailed development documentation, see [DEVELOPER_GUIDE.md](./DEVELOPER_GUI
    ```
 
 2. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -67,7 +69,7 @@ npm start
 
 ## Project Structure
 
-```
+```plaintext
 msrep-site/
 ├── src/
 │   ├── app/              # Next.js App Router pages
