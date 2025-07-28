@@ -40,3 +40,4 @@ jobs:
           source: "./out/*"
           target: "/var/www/msrepsitetest"
           strip_components: 1
+          debug: true  # Optional: Set to true for debugging output
