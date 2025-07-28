@@ -39,4 +39,4 @@ jobs:
           key: ${{ secrets.GH_DEPLOY_MSREPSITETEST }}
           source: "./out/*"
           target: "/var/www/msrepsitetest"
-          strip_components: 1
+          strip_components: 0
