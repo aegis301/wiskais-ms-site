@@ -7,13 +7,15 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MSREP - Repetitoriumsveranstaltungen Münster",
-  description: "Website der münsteraner Anästhesie- und Intensivmedizin Repetitorien.",
-  keywords: ["Anästhesie", "Intensivmedizin", "Repetitorium", "Münster", "Fortbildung"],
+  title: "WISKAIS - Wissenschaftlicher Arbeitskreis Anästhesie und Intensivmedizin Münster",
+  description: "Website des wissenschaftlichen Arbeitskreises Anästhesie und Intensivmedizin Münster (WISKAIS) mit Informationen zu Repetitoriumsveranstaltungen in Anästhesie und Intensivmedizin.",
+  keywords: ["Anästhesie", "Intensivmedizin", "Repetitorium", "Münster", "Fortbildung", "WISKAIS"],
   authors: [{ name: "Christian Porschen" }],
   openGraph: {
-    title: "MSREP - Repetitoriumsveranstaltungen Münster",
-    description: "Website der münsteraner Anästhesie- und Intensivmedizin Repetitorien.",
+    title: "WISKAIS - Wissenschaftlicher Arbeitskreis Anästhesie und Intensivmedizin Münster",
+    description: "Website des wissenschaftlichen Arbeitskreises Anästhesie und Intensivmedizin Münster (WISKAIS) mit Informationen zu Repetitoriumsveranstaltungen in Anästhesie und Intensivmedizin.",
+    url: "https://www.wiskais.de",
+    siteName: "WISKAIS",
     type: "website",
     locale: "de_DE",
   },

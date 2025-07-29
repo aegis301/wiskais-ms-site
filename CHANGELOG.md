@@ -5,6 +5,35 @@ All notable changes to the MSREP website project will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.2] - 2025-07-29
+
+### Added
+
+- **Reusable Component Library**
+  - `HeroSection` component for consistent page headers
+  - `Button` component with primary, secondary, and disabled variants
+  - `FormInput` and `FormSelect` components for consistent form styling
+  - `StatusBadge` component for event status display
+  - `PartnerLogos` component for logo grid display
+  - `ContactInfoItem` component for contact information sections
+  - `CallToAction` component for action sections
+
+### Changed
+
+- **Code Organization Improvements**
+  - Extracted reusable components to reduce code duplication
+  - Updated `EventCard` to use new `StatusBadge` and `Button` components
+  - Refactored home page to use `PartnerLogos` component
+  - Updated events page to use `HeroSection` and `CallToAction` components
+  - Improved type safety with centralized component interfaces
+
+### Improved
+
+- **Maintainability**: Changes to buttons, forms, and hero sections now only need to be made in one place
+- **Consistency**: All components now follow the same design patterns
+- **Developer Experience**: Reusable components make adding new pages faster
+- **Bundle Size**: Reduced code duplication leads to more efficient bundling
+
 ## [2.0.1] - 2025-07-20
 
 ### Changed

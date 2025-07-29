@@ -1,107 +1,83 @@
-import Image from "next/image";
-import Link from "next/link";
+import PartnerLogos from "@/components/PartnerLogos";
+import HeroSection from "@/components/HeroSection";
+import ContentSection from "@/components/ContentSection";
+import Button from "@/components/Button";
+
+const partnerLogos = [
+  {
+    src: "/images/global/Universitätsklinikum_Münster_Logo.svg",
+    alt: "Universitätsklinikum Münster"
+  },
+  {
+    src: "/images/global/Universitätsklinikum_Aachen_Logo.svg",
+    alt: "Universitätsklinikum Aachen"
+  },
+  {
+    src: "/images/global/Logo_UKSH.svg",
+    alt: "UKSH"
+  },
+  {
+    src: "/images/global/Logo_Charite.svg",
+    alt: "Charité"
+  },
+  {
+    src: "/images/global/Klinikum_rechts_der_Isar_logo.svg",
+    alt: "Klinikum rechts der Isar"
+  },
+  {
+    src: "/images/global/Logo_University_Hospital_Dresden_2024-06-01.svg",
+    alt: "University Hospital Dresden"
+  }
+];
+
+const contentSections = [
+  {
+    title: "Wer wir sind",
+    content: [
+      "Ut sint proident et reprehenderit amet nisi. Reprehenderit minim incididunt nisi eu.",
+      "Est amet sunt anim quis commodo nostrud occaecat fugiat mollit deserunt est aliqua minim aute sunt. Amet fugiat nisi eiusmod do cupidatat proident officia tempor et cillum exercitation. Ex elit sint in ex et ad amet veniam.",
+    ],
+    imageSrc: "/images/pages/monitor.jpg",
+    imageAlt: "Medical Monitor",
+    imageOnLeft: true
+  },
+  {
+    title: "Was wir machen",
+    content: "Do eiusmod amet occaecat in Lorem cupidatat irure voluptate ad occaecat magna aliquip et. Officia cillum reprehenderit velit aliquip esse. Tempor ipsum amet laborum proident incididunt adipisicing pariatur dolor aute eiusmod. Est ea eu enim ex irure reprehenderit veniam reprehenderit et.",
+    imageSrc: "/images/pages/spritzen.jpg",
+    imageAlt: "Medical Syringes",
+    imageOnLeft: false
+  }
+];
 
 export default function Home() {
   return (
     <div>
-      {/* Hero Section */}
-      <div className="bg-gray-200">
-        <div className="max-w-screen-xl px-4 py-8 mx-auto">
-          <div className="grid items-center gap-8 mb-8 sm:mb-0 lg:gap-12 lg:grid-cols-12">
-            <div className="col-span-6 px-4 text-center sm:mb-6 lg:text-left lg:mb-0">
-              <h1 className="mb-2 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl">
-                MSREP
-              </h1>
-              <h2 className="pb-2 text-3xl font-light text-gray-800 md:text-4xl">
-                Repetitoriumsveranstaltungen Münster
-              </h2>
-              <p className="max-w-xl mx-auto mb-6 font-normal text-gray-900 lg:mx-0 xl:mb-2 md:text-lg xl:text-xl">
-                Website der münsteraner Anästhesie- und Intensivmedizin Repetitorien.
-              </p>
-            </div>
-            <div className="col-span-6">
-              <Image 
-                src="/images/beutel.jpg" 
-                alt="Medical Equipment" 
-                width={576} 
-                height={576}
-                className="w-full max-w-xl mx-auto rounded-lg"
-                priority
-              />
-            </div>
-          </div>
+      <HeroSection
+        title="WISKAIS"
+        subtitle="Wissenschaftlicher Arbeitskreis"
+        description="Anästhesie, Intensiv- und Schmerzmedizin Münster"
+        backgroundClass="bg-gray-200"
+      />
+
+      {/* Content Sections */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-
+6 lg:px-8">
+          {contentSections.map((section, index) => (
+            <ContentSection
+              key={index}
+              title={section.title}
+              content={section.content}
+              imageSrc={section.imageSrc}
+              imageAlt={section.imageAlt}
+              imageOnLeft={section.imageOnLeft}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Mission Section */}
-      <div className="relative my-16">
-        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
-          <div className="relative sm:py-8 lg:py-0">
-            <div className="relative w-full h-auto px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:py-20">
-              <div className="overflow-hidden shadow-xl rounded-2xl">
-                <Image 
-                  src="/images/pages/monitor.jpg" 
-                  alt="Medical Monitor" 
-                  width={600} 
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
-            <div className="pt-12 sm:pt-16 lg:pt-20">
-              <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
-                Wer wir sind
-              </h2>
-              <div className="mt-6 text-gray-600 space-y-6">
-                <p className="text-lg">
-                  Hier könnten wir lang und breit beschreiben wer wir sind und was wir tun. 
-                  Insbesondere, dass wir wirklich ganz ganz toll sind und sehr gut lange Texte schreiben können.
-                </p>
-                <p className="text-lg">
-                  Also wirklich, ganz toll. Und unsere Redner erst, die sind noch besser.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* What We Do Section */}
-      <div className="relative my-16">
-        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
-          <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
-            <div className="pt-12 sm:pt-16 lg:pt-20">
-              <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
-                Was wir machen
-              </h2>
-              <div className="mt-6 text-gray-600 space-y-6">
-                <p className="text-lg">
-                  Hier könnten wir z.B. sehr lang und sehr breit erklären was wir eigentlich machen. 
-                  Dass wir zum Beispiel ganz tolle Repetitorien veranstalten, mit noch tolleren Vorträgen. 
-                  Vielleicht können wir das ganze auch als Website des WISKAIS selbst aufziehen.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="relative sm:py-8 lg:py-0">
-            <div className="relative w-full h-auto px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:py-20">
-              <div className="overflow-hidden shadow-xl rounded-2xl">
-                <Image 
-                  src="/images/pages/spritzen.jpg" 
-                  alt="Medical Syringes" 
-                  width={600} 
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Partners Section */}
+      {/* Partners Section
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -113,74 +89,23 @@ export default function Home() {
               Wir haben sowieso die besten Referent:innen allerzeiten. Jemals.
             </p>
             <div className="mt-8">
-              <Link 
+              <Button
                 href="/registration"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                variant="primary"
+                size="lg"
               >
                 Melden Sie sich an
-              </Link>
+              </Button>
             </div>
           </div>
 
-          {/* Partner Logos */}
-          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Universitätsklinikum_Münster_Logo.svg" 
-                alt="Universitätsklinikum Münster" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Universitätsklinikum_Aachen_Logo.svg" 
-                alt="Universitätsklinikum Aachen" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Logo_UKSH.svg" 
-                alt="UKSH" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Logo_Charite.svg" 
-                alt="Charité" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Klinikum_rechts_der_Isar_logo.svg" 
-                alt="Klinikum rechts der Isar" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center">
-              <Image 
-                src="/images/global/Logo_University_Hospital_Dresden_2024-06-01.svg" 
-                alt="University Hospital Dresden" 
-                width={120} 
-                height={80}
-                className="h-12 object-contain"
-              />
-            </div>
-          </div>
+          <PartnerLogos 
+            logos={partnerLogos} 
+            title=""
+            className="mt-12"
+          />
         </div>
-      </div>
+      </div> */}
 
       {/* Newsletter Section */}
       <div className="py-16 bg-blue-600">
@@ -190,21 +115,22 @@ export default function Home() {
               Melden Sie sich für unseren Newsletter an
             </h2>
             <p className="mt-4 text-lg text-blue-100">
-              Unser ganz toller und ganz intelligenter Newsletter. Wir nerven auch nicht, versprochen.
+              Erhalten Sie regelmäßige Updates und Neuigkeiten zu unseren Veranstaltungen.
             </p>
             <div className="mt-8 max-w-md mx-auto">
               <form className="flex gap-4">
                 <input
                   type="email"
                   placeholder="Email Adresse"
-                  className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 focues:outline-none"
                 />
-                <button
+                <Button
                   type="submit"
-                  className="px-6 py-3 bg-white text-blue-600 font-medium rounded-md hover:bg-gray-50 transition-colors"
+                  variant="secondary"
+                  className="bg-white text-blue-600 hover:bg-gray-50"
                 >
                   Anmelden
-                </button>
+                </Button>
               </form>
             </div>
           </div>
