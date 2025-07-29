@@ -3,32 +3,32 @@ import HeroSection from "@/components/HeroSection";
 import ContentSection from "@/components/ContentSection";
 import Button from "@/components/Button";
 
-const partnerLogos = [
-  {
-    src: "/images/global/Universitätsklinikum_Münster_Logo.svg",
-    alt: "Universitätsklinikum Münster"
-  },
-  {
-    src: "/images/global/Universitätsklinikum_Aachen_Logo.svg",
-    alt: "Universitätsklinikum Aachen"
-  },
-  {
-    src: "/images/global/Logo_UKSH.svg",
-    alt: "UKSH"
-  },
-  {
-    src: "/images/global/Logo_Charite.svg",
-    alt: "Charité"
-  },
-  {
-    src: "/images/global/Klinikum_rechts_der_Isar_logo.svg",
-    alt: "Klinikum rechts der Isar"
-  },
-  {
-    src: "/images/global/Logo_University_Hospital_Dresden_2024-06-01.svg",
-    alt: "University Hospital Dresden"
-  }
-];
+// const partnerLogos = [
+//   {
+//     src: "/images/global/Universitätsklinikum_Münster_Logo.svg",
+//     alt: "Universitätsklinikum Münster"
+//   },
+//   {
+//     src: "/images/global/Universitätsklinikum_Aachen_Logo.svg",
+//     alt: "Universitätsklinikum Aachen"
+//   },
+//   {
+//     src: "/images/global/Logo_UKSH.svg",
+//     alt: "UKSH"
+//   },
+//   {
+//     src: "/images/global/Logo_Charite.svg",
+//     alt: "Charité"
+//   },
+//   {
+//     src: "/images/global/Klinikum_rechts_der_Isar_logo.svg",
+//     alt: "Klinikum rechts der Isar"
+//   },
+//   {
+//     src: "/images/global/Logo_University_Hospital_Dresden_2024-06-01.svg",
+//     alt: "University Hospital Dresden"
+//   }
+// ];
 
 const contentSections = [
   {
