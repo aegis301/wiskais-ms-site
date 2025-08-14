@@ -73,7 +73,7 @@ export const TEXT_CLASSES = {
 
 export const BUTTON_VARIANTS = {
   PRIMARY: 'bg-primary text-white hover:bg-blue-700 focus:ring-primary',
-  SECONDARY: 'bg-secondary text-white hover:bg-blue-600 focus:ring-secondary',
+  SECONDARY: 'bg-secondary text-primary hover:bg-blue-600 focus:ring-secondary',
   OUTLINE: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary',
   GHOST: 'text-primary hover:bg-gray-100 focus:ring-primary',
 } as const;
