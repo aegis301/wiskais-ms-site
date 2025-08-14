@@ -21,6 +21,12 @@ interface ContentParagraphProps {
   size?: 'sm' | 'base' | 'lg';
 }
 
+interface ContentListProps {
+  children: ReactNode;
+  className?: string;
+  type?: 'unordered' | 'ordered';
+}
+
 interface ContentHighlightProps {
   children: ReactNode;
   variant?: 'blue' | 'green' | 'yellow' | 'red';
@@ -133,6 +139,25 @@ export function ContentParagraph({ children, className = '', size = 'lg' }: Cont
     <p className={`${sizeClasses[size]} text-gray-700 mb-6 ${className}`}>
       {children}
     </p>
+  );
+}
+
+// Semantic list component with consistent styling
+export function ContentList({ children, className = '', type = 'unordered' }: ContentListProps) {
+  const baseClasses = "text-lg text-gray-700 mb-6 space-y-2 ml-6";
+  
+  if (type === 'ordered') {
+    return (
+      <ol className={`${baseClasses} list-decimal ${className}`}>
+        {children}
+      </ol>
+    );
+  }
+  
+  return (
+    <ul className={`${baseClasses} list-disc ${className}`}>
+      {children}
+    </ul>
   );
 }
 

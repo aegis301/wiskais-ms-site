@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import ContentContainer from "@/components/ContentContainer";
-import { ContentHeading, ContentParagraph, ContentList } from "@/components/ContentElements";
+import { ContentHeading, ContentParagraph } from "@/components/ContentElements";
 
 export const metadata = {
   title: "Datenschutz - MSREP",
@@ -57,37 +57,43 @@ export default function DataProtection() {
         <ContentParagraph>
           Folgende Informationen werden dabei ohne Ihr Zutun erfasst und bis zur automatisierten Löschung gespeichert:
         </ContentParagraph>
-        <ContentList type="unordered">
-          <li>IP-Adresse des anfragenden Rechners</li>
-          <li>Datum und Uhrzeit des Zugriffs</li>
-          <li>Name und URL der abgerufenen Datei</li>
-          <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
-          <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers</li>
-        </ContentList>
+        <div className="prose prose-lg max-w-none mb-6">
+          <ul>
+            <li>IP-Adresse des anfragenden Rechners</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>Name und URL der abgerufenen Datei</li>
+            <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+            <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers</li>
+          </ul>
+        </div>
 
         <ContentHeading level={3}>3.2 Anmeldung zu Veranstaltungen</ContentHeading>
         <ContentParagraph>
           Wenn Sie sich zu einer unserer Veranstaltungen anmelden, erheben wir folgende personenbezogene Daten:
         </ContentParagraph>
-        <ContentList type="unordered">
-          <li>Anrede, Titel, Vor- und Nachname</li>
-          <li>Adresse (Straße, PLZ, Ort)</li>
-          <li>E-Mail-Adresse</li>
-          <li>Klinikadresse (optional)</li>
-          <li>Berufsbezeichnung</li>
-          <li>EFN-Nummer (optional)</li>
-          <li>Teilnahmeart (Präsenz/Online)</li>
-        </ContentList>
+        <div className="prose prose-lg max-w-none mb-6">
+          <ul>
+            <li>Anrede, Titel, Vor- und Nachname</li>
+            <li>Adresse (Straße, PLZ, Ort)</li>
+            <li>E-Mail-Adresse</li>
+            <li>Klinikadresse (optional)</li>
+            <li>Berufsbezeichnung</li>
+            <li>EFN-Nummer (optional)</li>
+            <li>Teilnahmeart (Präsenz/Online)</li>
+          </ul>
+        </div>
 
         <ContentHeading level={3}>3.3 Kontaktformular</ContentHeading>
         <ContentParagraph>
           Bei der Nutzung unseres Kontaktformulars erheben wir folgende Daten:
         </ContentParagraph>
-        <ContentList type="unordered">
-          <li>Vor- und Nachname</li>
-          <li>E-Mail-Adresse</li>
-          <li>Betreff und Nachricht</li>
-        </ContentList>
+        <div className="prose prose-lg max-w-none mb-6">
+          <ul>
+            <li>Vor- und Nachname</li>
+            <li>E-Mail-Adresse</li>
+            <li>Betreff und Nachricht</li>
+          </ul>
+        </div>
 
         <ContentHeading level={2}>4. Zweck der Datenverarbeitung</ContentHeading>
         
@@ -95,23 +101,27 @@ export default function DataProtection() {
         <ContentParagraph>
           Die Verarbeitung der unter 3.1 genannten Daten erfolgt zu folgenden Zwecken:
         </ContentParagraph>
-        <ContentList type="unordered">
-          <li>Gewährleistung eines reibungslosen Verbindungsaufbaus der Website</li>
-          <li>Gewährleistung einer komfortablen Nutzung unserer Website</li>
-          <li>Auswertung der Systemsicherheit und -stabilität</li>
-          <li>Weitere administrative Zwecke</li>
-        </ContentList>
+        <div className="prose prose-lg max-w-none mb-6">
+          <ul>
+            <li>Gewährleistung eines reibungslosen Verbindungsaufbaus der Website</li>
+            <li>Gewährleistung einer komfortablen Nutzung unserer Website</li>
+            <li>Auswertung der Systemsicherheit und -stabilität</li>
+            <li>Weitere administrative Zwecke</li>
+          </ul>
+        </div>
 
         <ContentHeading level={3}>4.2 Veranstaltungsanmeldung</ContentHeading>
         <ContentParagraph>
           Die Verarbeitung der Anmeldedaten erfolgt zur:
         </ContentParagraph>
-        <ContentList type="unordered">
-          <li>Durchführung und Organisation der Veranstaltung</li>
-          <li>Kommunikation mit den Teilnehmern</li>
-          <li>Ausstellung von Teilnahmebescheinigungen</li>
-          <li>Erfüllung rechtlicher Verpflichtungen</li>
-        </ContentList>
+        <div className="prose prose-lg max-w-none mb-6">
+          <ul>
+            <li>Durchführung und Organisation der Veranstaltung</li>
+            <li>Kommunikation mit den Teilnehmern</li>
+            <li>Ausstellung von Teilnahmebescheinigungen</li>
+            <li>Erfüllung rechtlicher Verpflichtungen</li>
+          </ul>
+        </div>
 
         <ContentHeading level={2}>5. Rechtsgrundlage für die Datenverarbeitung</ContentHeading>
         <ContentParagraph>
