@@ -1,7 +1,9 @@
 import PartnerLogos from "@/components/PartnerLogos";
 import HeroSection from "@/components/HeroSection";
 import ContentSection from "@/components/ContentSection";
+import EventTypesSection from "@/components/EventTypesSection";
 import Button from "@/components/Button";
+import { eventTypes } from "@/data/events";
 
 const partnerLogos = [
   {
@@ -83,6 +85,9 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* Event Types Section */}
+      <EventTypesSection eventTypes={eventTypes} />
 
       {/* Partners Section */}
       <div className="py-16 bg-gray-50">

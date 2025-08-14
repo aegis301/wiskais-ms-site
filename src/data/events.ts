@@ -147,7 +147,7 @@ export const scheduledEvents: ScheduledEvent[] = [
     date: '2025-06-20',
     location: 'LWL-Museum Münster',
     locationDetails: 'Auditorium, Domplatz 10, 48143 Münster',
-    status: 'upcoming',
+    status: 'completed',
     registrationOpen: true,
     registrationDeadline: '2025-06-13',
     speakers: ['Dr. med. T. Digital', 'Prof. Dr. med. K. Innovation'],
