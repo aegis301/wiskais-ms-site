@@ -47,7 +47,7 @@ export default function About() {
             <li><strong>Zentrale Lage</strong>: Unsere Veranstaltungen finden im Herzen von Münster statt, teilweise in besonderen Locations wie dem LWL-Museum</li>
           </ContentList>
 
-          <ContentHighlight variant="blue">
+          <ContentHighlight variant="green">
             Die Veranstaltung ist im Rahmen der &ldquo;Zertifizierung der ärztlichen Fortbildung&rdquo; der
             Ärztekammer Westfalen-Lippe anerkannt.
           </ContentHighlight>

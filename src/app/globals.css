@@ -1,15 +1,81 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+  /* Brand Colors */
+  --color-primary: #003866;
+  --color-secondary: #006db0;
+  --color-tertiary: #deecf5;
+  --color-dark: #001b33;
+  
+  /* Base Colors */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Gray Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Brand colors for Tailwind */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-dark: var(--color-dark);
+  
+  /* Gray scale for Tailwind */
+  --color-gray-50: var(--color-gray-50);
+  --color-gray-100: var(--color-gray-100);
+  --color-gray-200: var(--color-gray-200);
+  --color-gray-300: var(--color-gray-300);
+  --color-gray-400: var(--color-gray-400);
+  --color-gray-500: var(--color-gray-500);
+  --color-gray-600: var(--color-gray-600);
+  --color-gray-700: var(--color-gray-700);
+  --color-gray-800: var(--color-gray-800);
+  --color-gray-900: var(--color-gray-900);
+  
+  /* Semantic colors for Tailwind */
+  --color-green-500: var(--color-success);
+  --color-yellow-500: var(--color-warning);
+  --color-red-500: var(--color-error);
+  --color-blue-500: var(--color-info);
+  --color-blue-600: var(--color-primary);
+  --color-blue-700: #002b4f;
+  
+  /* Additional blue shades for proper color mapping */
+  --color-blue-50: var(--color-tertiary);
+  --color-blue-100: #c7e0f0;
+  --color-blue-200: #a3d0e8;
+  --color-blue-300: #7fc0df;
+  --color-blue-400: #4da8d4;
+  --color-blue-500: var(--color-secondary);
+  --color-blue-600: var(--color-primary);
+  --color-blue-700: #002b4f;
+  --color-blue-800: var(--color-dark);
+  --color-blue-900: #001329;
+  
+  /* Font configuration */
+  --font-sans: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +88,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

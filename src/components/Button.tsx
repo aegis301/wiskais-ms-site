@@ -27,10 +27,10 @@ export default function Button({
   const variantClasses = {
     primary: disabled 
       ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
-      : 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+      : 'bg-primary text-white hover:bg-blue-700 focus:ring-primary',
     secondary: disabled 
       ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-      : 'bg-gray-100 text-gray-800 hover:bg-gray-200 focus:ring-gray-500',
+      : 'bg-secondary text-white hover:bg-blue-600 focus:ring-secondary',
     disabled: 'bg-gray-300 text-gray-500 cursor-not-allowed'
   };
   
