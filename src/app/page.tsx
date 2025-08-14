@@ -45,14 +45,14 @@ const contentSections = [
       "Ut sint proident et reprehenderit amet nisi. Reprehenderit minim incididunt nisi eu.",
       "Est amet sunt anim quis commodo nostrud occaecat fugiat mollit deserunt est aliqua minim aute sunt. Amet fugiat nisi eiusmod do cupidatat proident officia tempor et cillum exercitation. Ex elit sint in ex et ad amet veniam.",
     ],
-    imageSrc: "/images/pages/monitor.jpg",
+    imageSrc: "/images/pages/rtw.jpg",
     imageAlt: "Medical Monitor",
     imageOnLeft: true
   },
   {
     title: "Was wir machen",
     content: "Do eiusmod amet occaecat in Lorem cupidatat irure voluptate ad occaecat magna aliquip et. Officia cillum reprehenderit velit aliquip esse. Tempor ipsum amet laborum proident incididunt adipisicing pariatur dolor aute eiusmod. Est ea eu enim ex irure reprehenderit veniam reprehenderit et.",
-    imageSrc: "/images/pages/spritzen.jpg",
+    imageSrc: "/images/pages/rtw.jpg",
     imageAlt: "Medical Syringes",
     imageOnLeft: false
   }
