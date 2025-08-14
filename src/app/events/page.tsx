@@ -1,5 +1,7 @@
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
+import HeroSection from "@/components/HeroSection";
+import CallToAction from "@/components/CallToAction";
 import { Event } from "@/types";
 
 export const metadata = {
@@ -43,20 +45,10 @@ const events: Event[] = [
 export default function Events() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
-              Unsere Veranstaltungen
-            </h1>
-            <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
-              Entdecken Sie unsere aktuellen und kommenden Repetitoriumsveranstaltungen für 
-              Anästhesie, Intensivmedizin und Notfallmedizin.
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="Unsere Veranstaltungen"
+        description="Entdecken Sie unsere aktuellen und kommenden Repetitoriumsveranstaltungen für Anästhesie, Intensivmedizin und Notfallmedizin."
+      />
 
       {/* Events Grid */}
       <div className="py-16">
@@ -69,25 +61,12 @@ export default function Events() {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="bg-blue-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Haben Sie Fragen zu unseren Veranstaltungen?
-          </h2>
-          <p className="mt-4 text-lg text-blue-100">
-            Kontaktieren Sie uns gerne für weitere Informationen oder individuelle Beratung.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors"
-            >
-              Kontakt aufnehmen
-            </Link>
-          </div>
-        </div>
-      </div>
+      <CallToAction
+        title="Haben Sie Fragen zu unseren Veranstaltungen?"
+        description="Kontaktieren Sie uns gerne für weitere Informationen oder individuelle Beratung."
+        buttonText="Kontakt aufnehmen"
+        buttonHref="/contact"
+      />
     </div>
   );
 }

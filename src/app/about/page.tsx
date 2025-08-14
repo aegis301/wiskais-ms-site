@@ -1,4 +1,7 @@
 import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
+import ContentContainer from "@/components/ContentContainer";
+import ContentElements, { ContentHeading, ContentParagraph, ContentHighlight, ContentList } from "@/components/ContentElements";
 
 export const metadata = {
   title: "Über uns - MSREP",
@@ -8,71 +11,55 @@ export const metadata = {
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="bg-gray-200 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-              Über uns
-            </h1>
-            <p className="mt-4 text-xl text-gray-600">
-              Erfahren Sie mehr über unsere Repetitoriumsveranstaltungen
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="Über uns"
+        description="Erfahren Sie mehr über unsere Repetitoriumsveranstaltungen"
+        backgroundClass="bg-gray-200"
+      />
 
-      {/* Content Section */}
-      <div className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg mx-auto">
-            <div className="mb-8">
-              <Image 
-                src="/images/pages/rtw.jpg" 
-                alt="Rettungswagen" 
-                width={800} 
-                height={400}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+      <ContentContainer maxWidth="4xl" paddingY="xl">
+        <ContentElements
+          imageSrc="/images/pages/rtw.jpg"
+          imageAlt="Rettungswagen"
+          imagePosition="top"
+        >
+          <ContentHeading level={2}>Über uns</ContentHeading>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Über uns</h2>
-            
-            <p className="text-lg text-gray-700 mb-6">
-              Das primäre Ziel dieser Veranstaltung ist es, all den Ärztinnen und Ärzten, die sich am Ende ihrer 
-              Weiterbildungszeit befinden, die Möglichkeit zu geben, sich durch Auffrischung ihres Wissensstandes 
-              auf die Prüfung zum Facharzt/ zur Fachärztin für Anästhesiologie vorzubereiten. Sie ist darüber hinaus 
-              geeignet für alle Fach-, Ober- und Chefärzt*innen, die ihren Wissensstand überprüfen und aktualisieren möchten.
-            </p>
+          <ContentParagraph>
+            <strong>WISKAIS</strong> (Wissenschaftlicher Arbeitskreis Anästhesie, Intensiv- und Schmerzmedizin Münster) ist ein Zusammenschluss von medizinischen Fachkräften im regionalen Weiterbildungsverbund der Kliniken in Münster und Umgebung. Unser Arbeitskreis hat sich zum Ziel gesetzt, die Vielfalt und Dynamik der Anästhesiologie in all ihren Facetten in unseren Weiterbildungsprogrammen zu fördern und abzubilden.
+          </ContentParagraph>
 
-            <p className="text-lg text-gray-700 mb-6">
-              Wir planen das Repetitorium in Präsenz und hoffen sehr, damit an die Tradition des kollegialen Austauschs 
-              der vergangenen Jahre wieder anknüpfen zu können. Um auf die gewandelten Anforderungen nach den Pandemiejahren 
-              einzugehen, werden wir die Vorträge gleichzeitig per LiveStream übertragen und On-Demand vom 10.02.-30.05.2025 
-              zur Verfügung stellen.
-            </p>
+          <ContentHeading level={3}>Unsere Mission</ContentHeading>
 
-            <p className="text-lg text-gray-700 mb-6">
-              Zur Fortbildung gehört ein Band mit schriftlichen Beiträgen, welcher im Rahmen der Veranstaltung ausgegeben 
-              bzw. postalisch zugesandt wird. Wir blicken der Teilnahme in Präsenz mit Freude entgegen und freuen uns neben 
-              der fachlichen Diskussion auf die kollegiale Zusammenarbeit im Rahmen der praktischen Workshops ebenso, wie 
-              den Austausch beim Get-together am Montagabend.
-            </p>
+          <ContentParagraph>
+            Wir schaffen hochwertige Fortbildungsformate
+            und Weiterbildungsformate
+            für Anästhesist:innen jedes Berufsalters
+            , die die spannende Bandbreite unseres Faches – von der perioperativen Anästhesie über die Intensivmedizin bis hin zur Notfall- und Schmerzmedizin – allen Kolleginnen und Kollegen nahebringen. Dabei werfen wir bewusst auch einen Blick über den Tellerrand und verbinden fachliche Exzellenz mit persönlichem Austausch.
+          </ContentParagraph>
 
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <p className="text-lg text-blue-800 font-medium">
-                Die Veranstaltung ist im Rahmen der &ldquo;Zertifizierung der ärztlichen Fortbildung&rdquo; der 
-                Ärztekammer Westfalen-Lippe anerkannt.
-              </p>
-            </div>
+          <ContentHeading level={3}>Was uns auszeichnet</ContentHeading>
 
-            <p className="text-lg text-gray-700">
-              Wir laden Sie zur Teilnahme am Repetitorium Anästhesiologie herzlich ein und freuen uns, mit Ihnen als 
-              Teilnehmenden vor Ort oder online zugeschaltet das Repetitorium durchführen zu dürfen.
-            </p>
-          </div>
-        </div>
-      </div>
+          <ContentList type="unordered">
+            <li><strong>Praxisrelevante Fortbildungsformate</strong>: Unsere Veranstaltungen kombinieren theoretisches Wissen mit praktischen Workshops und interaktiven Elementen</li>
+            <li><strong>Moderne Formate</strong>: Wir bieten sowohl Präsenzveranstaltungen als auch Livestreams und On-Demand-Angebote für maximale Flexibilität</li>
+            <li><strong>Persönlicher Austausch</strong>: Get-Together-Veranstaltungen und gemeinsame Pausen fördern den kollegialen Dialog</li>
+            <li><strong>Zentrale Lage</strong>: Unsere Veranstaltungen finden im Herzen von Münster statt, teilweise in besonderen Locations wie dem LWL-Museum</li>
+          </ContentList>
+
+          <ContentHighlight variant="blue">
+            Die Veranstaltung ist im Rahmen der &ldquo;Zertifizierung der ärztlichen Fortbildung&rdquo; der
+            Ärztekammer Westfalen-Lippe anerkannt.
+          </ContentHighlight>
+
+          <ContentHeading level={3}>Unser Angebot</ContentHeading>
+
+          <ContentParagraph>
+            Von quartalsweise stattfindenden `&quot;Art of Anesthesia&quot;` Meetings über spezialisierte Repetitorien, ETC- und Sono-Kursen
+            bis hin zu unserem jährlichen Symposium – der WISKAIS bietet ein umfassendes Fortbildungsprogramm für Ärztinnen und Ärzte aller Erfahrungsstufen
+          </ContentParagraph>
+        </ContentElements>
+      </ContentContainer>
     </div>
   );
 }

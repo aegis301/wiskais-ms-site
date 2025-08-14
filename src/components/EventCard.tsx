@@ -1,46 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Event } from "@/types";
+import StatusBadge from "./StatusBadge";
+import Button from "./Button";
 
 interface EventCardProps {
-  event: {
-    id: string;
-    title: string;
-    date: string;
-    location: string;
-    description: string;
-    image: string;
-    status: "upcoming" | "ongoing" | "completed";
-    registrationOpen: boolean;
-  };
+  event: Event;
 }
 
 export default function EventCard({ event }: EventCardProps) {
-  const getStatusStyles = (status: string) => {
-    switch (status) {
-      case 'upcoming':
-        return 'bg-green-100 text-green-800';
-      case 'ongoing':
-        return 'bg-blue-100 text-blue-800';
-      case 'completed':
-        return 'bg-gray-100 text-gray-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'upcoming':
-        return 'Bevorstehend';
-      case 'ongoing':
-        return 'Laufend';
-      case 'completed':
-        return 'Abgeschlossen';
-      default:
-        return 'Unbekannt';
-    }
-  };
-
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Event Image */}
@@ -52,9 +19,7 @@ export default function EventCard({ event }: EventCardProps) {
           className="object-cover"
         />
         <div className="absolute top-4 right-4">
-          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusStyles(event.status)}`}>
-            {getStatusText(event.status)}
-          </span>
+          <StatusBadge status={event.status} />
         </div>
       </div>
       
@@ -88,26 +53,29 @@ export default function EventCard({ event }: EventCardProps) {
         
         {/* Action Buttons */}
         <div className="flex gap-3">
-          <Link
+          <Button
             href={`/events/${event.id}`}
-            className="flex-1 bg-gray-100 text-gray-800 px-4 py-2 rounded-md text-center font-medium hover:bg-gray-200 transition-colors"
+            variant="secondary"
+            className="flex-1 text-center"
           >
             Details
-          </Link>
+          </Button>
           {event.registrationOpen ? (
-            <Link
+            <Button
               href="/registration"
-              className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-center font-medium hover:bg-blue-700 transition-colors"
+              variant="primary"
+              className="flex-1 text-center"
             >
               Anmelden
-            </Link>
+            </Button>
           ) : (
-            <button
+            <Button
+              variant="disabled"
               disabled
-              className="flex-1 bg-gray-300 text-gray-500 px-4 py-2 rounded-md text-center font-medium cursor-not-allowed"
+              className="flex-1 text-center"
             >
               {event.status === 'completed' ? 'Abgeschlossen' : 'Anmeldung folgt'}
-            </button>
+            </Button>
           )}
         </div>
       </div>
