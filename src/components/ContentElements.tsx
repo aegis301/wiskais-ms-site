@@ -1,36 +1,33 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { 
+  BaseChildrenProps, 
+  HeadingLevel, 
+  TextSize, 
+  ImagePosition, 
+  ColorVariant 
+} from "@/types/common";
+import { HEADING_CLASSES, TEXT_SIZE_CLASSES } from "@/constants/design";
 
-interface ContentElementsProps {
+interface ContentElementsProps extends BaseChildrenProps {
   imageSrc?: string;
   imageAlt?: string;
-  imagePosition?: 'left' | 'right' | 'top';
-  className?: string;
-  children: ReactNode;
+  imagePosition?: ImagePosition;
 }
 
-interface ContentHeadingProps {
-  level?: 1 | 2 | 3 | 4;
-  children: ReactNode;
-  className?: string;
+interface ContentHeadingProps extends BaseChildrenProps {
+  level?: HeadingLevel;
 }
 
-interface ContentParagraphProps {
-  children: ReactNode;
-  className?: string;
-  size?: 'sm' | 'base' | 'lg';
+interface ContentParagraphProps extends BaseChildrenProps {
+  size?: TextSize;
 }
 
-interface ContentListProps {
-  children: ReactNode;
-  className?: string;
+interface ContentListProps extends BaseChildrenProps {
   type?: 'unordered' | 'ordered';
 }
 
-interface ContentHighlightProps {
-  children: ReactNode;
-  variant?: 'blue' | 'green' | 'yellow' | 'red';
-  className?: string;
+interface ContentHighlightProps extends BaseChildrenProps {
+  variant?: ColorVariant;
 }
 
 // Main content container component with layout
@@ -104,16 +101,19 @@ export default function ContentElements({
 // Semantic heading component with consistent styling
 export function ContentHeading({ level = 2, children, className = '' }: ContentHeadingProps) {
   const baseClasses = "font-bold text-gray-900 mb-6";
+  
+  // Ensure level is within valid range
+  const validLevel = Math.min(Math.max(level, 1), 4) as 1 | 2 | 3 | 4;
   const levelClasses = {
     1: "text-4xl",
-    2: "text-3xl",
+    2: "text-3xl", 
     3: "text-2xl",
     4: "text-xl"
   };
 
-  const combinedClassName = `${baseClasses} ${levelClasses[level]} ${className}`;
+  const combinedClassName = `${baseClasses} ${levelClasses[validLevel]} ${className}`;
   
-  switch (level) {
+  switch (validLevel) {
     case 1:
       return <h1 className={combinedClassName}>{children}</h1>;
     case 2:
@@ -132,11 +132,19 @@ export function ContentParagraph({ children, className = '', size = 'lg' }: Cont
   const sizeClasses = {
     'sm': 'text-base',
     'base': 'text-lg',
-    'lg': 'text-lg'
+    'lg': 'text-lg',
+    'xs': 'text-sm',
+    'xl': 'text-xl',
+    '2xl': 'text-2xl',
+    '3xl': 'text-3xl',
+    '4xl': 'text-4xl'
   };
 
+  // Fallback to lg if size not found
+  const sizeClass = sizeClasses[size] || sizeClasses['lg'];
+
   return (
-    <p className={`${sizeClasses[size]} text-gray-700 mb-6 ${className}`}>
+    <p className={`${sizeClass} text-gray-700 mb-6 ${className}`}>
       {children}
     </p>
   );
@@ -167,11 +175,17 @@ export function ContentHighlight({ children, variant = 'blue', className = '' }:
     'blue': 'bg-blue-50 text-blue-800',
     'green': 'bg-green-50 text-green-800',
     'yellow': 'bg-yellow-50 text-yellow-800',
-    'red': 'bg-red-50 text-red-800'
+    'red': 'bg-red-50 text-red-800',
+    'gray': 'bg-gray-50 text-gray-800',
+    'primary': 'bg-blue-50 text-blue-800',
+    'secondary': 'bg-blue-50 text-blue-800'
   };
 
+  // Fallback to blue if variant not found
+  const variantClass = variantClasses[variant] || variantClasses['blue'];
+
   return (
-    <div className={`${variantClasses[variant]} p-6 rounded-lg mb-8 ${className}`}>
+    <div className={`${variantClass} p-6 rounded-lg mb-8 ${className}`}>
       <p className="text-lg font-medium">
         {children}
       </p>

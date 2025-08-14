@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import NavLinks from './NavLinks';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,18 +41,7 @@ export default function Navigation() {
           </button>
         </div>
         <nav className={`${isOpen ? 'flex' : 'hidden'} flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row`} id="menuItems">
-          <Link href="/about" className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus:shadow-outline">
-            Über uns
-          </Link>
-          <Link href="/events" className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus:shadow-outline">
-            Veranstaltungen
-          </Link>
-          <Link href="/registration" className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus:shadow-outline">
-            Anmeldung
-          </Link>
-          <Link href="/contact" className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-blue-600 focus:bg-blue-600 focus:outline-none focus:shadow-outline">
-            Kontakt
-          </Link>
+          <NavLinks onLinkClick={() => setIsOpen(false)} />
         </nav>
       </div>
     </nav>
