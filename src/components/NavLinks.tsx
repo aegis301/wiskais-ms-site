@@ -26,6 +26,14 @@ export default function NavLinks({ className = '', onLinkClick }: NavLinksProps)
       <EventsDropdown onLinkClick={handleLinkClick} />
       
       <Link 
+        href="/blog" 
+        className={linkBaseClasses}
+        onClick={handleLinkClick}
+      >
+        Blog
+      </Link>
+      
+      <Link 
         href="/calendar" 
         className={linkBaseClasses}
         onClick={handleLinkClick}

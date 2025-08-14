@@ -261,3 +261,60 @@ export interface PartnerLogo {
   website?: string;
   alt?: string;
 }
+
+// ==========================================
+// BLOG-RELATED TYPES
+// ==========================================
+
+/**
+ * Blog post status
+ */
+export type BlogPostStatus = 'draft' | 'published' | 'archived';
+
+/**
+ * Blog post category
+ */
+export type BlogCategory = 'news' | 'events' | 'announcements' | 'updates' | 'general';
+
+/**
+ * Blog post author information
+ */
+export interface BlogAuthor {
+  id: string;
+  name: string;
+  role: string;
+  avatar?: string;
+  bio?: string;
+}
+
+/**
+ * Blog post definition
+ */
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  category: BlogCategory;
+  status: BlogPostStatus;
+  publishedAt: string;
+  updatedAt?: string;
+  author: BlogAuthor;
+  featuredImage?: string;
+  tags: string[];
+  readingTime: number; // in minutes
+  relatedEvents?: string[]; // Event IDs
+}
+
+/**
+ * Blog pagination info
+ */
+export interface BlogPagination {
+  currentPage: number;
+  totalPages: number;
+  totalPosts: number;
+  postsPerPage: number;
+  hasNext: boolean;
+  hasPrev: boolean;
+}
