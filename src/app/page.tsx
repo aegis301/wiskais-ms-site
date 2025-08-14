@@ -3,32 +3,40 @@ import HeroSection from "@/components/HeroSection";
 import ContentSection from "@/components/ContentSection";
 import Button from "@/components/Button";
 
-// const partnerLogos = [
-//   {
-//     src: "/images/global/Universitätsklinikum_Münster_Logo.svg",
-//     alt: "Universitätsklinikum Münster"
-//   },
-//   {
-//     src: "/images/global/Universitätsklinikum_Aachen_Logo.svg",
-//     alt: "Universitätsklinikum Aachen"
-//   },
-//   {
-//     src: "/images/global/Logo_UKSH.svg",
-//     alt: "UKSH"
-//   },
-//   {
-//     src: "/images/global/Logo_Charite.svg",
-//     alt: "Charité"
-//   },
-//   {
-//     src: "/images/global/Klinikum_rechts_der_Isar_logo.svg",
-//     alt: "Klinikum rechts der Isar"
-//   },
-//   {
-//     src: "/images/global/Logo_University_Hospital_Dresden_2024-06-01.svg",
-//     alt: "University Hospital Dresden"
-//   }
-// ];
+const partnerLogos = [
+  {
+    src: "/images/global/partner-logos/Universitätsklinikum_Münster_Logo.svg",
+    alt: "Universitätsklinikum Münster"
+  },
+  {
+    src: "/images/global/partner-logos/Alexianer_Clemenshospital_Logo.svg",
+    alt: "Clemenshospital Münster"
+  },
+  {
+    src: "/images/global/partner-logos/Alexianer_Raphaelsklinik_Logo.svg",
+    alt: "Raphaelsklinik Münster"
+  },
+  {
+    src: "/images/global/partner-logos/Franziskus_Muenster.png",
+    alt: "St. Franziskus-Hospital Münster"
+  },
+  {
+    src: "/images/global/partner-logos/Herz_Jesu_Hiltrup.png",
+    alt: "Herz-Jesu-Krankenhaus Hiltrup"
+  },
+  {
+    src: "/images/global/partner-logos/Hornheide.png",
+    alt: "Fachklinik Hornheide"
+  },
+  {
+    src: "/images/global/partner-logos/Klinikum_Osnabrueck_Green_Hospital_Logo.svg",
+    alt: "Klinikum Osnabrück"
+  },
+  {
+    src: "/images/global/partner-logos/logo-ukm-marienhospital-web.png",
+    alt: "Marienhospital Steinfurt"
+  }
+];
 
 const contentSections = [
   {
@@ -77,7 +85,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Partners Section
+      {/* Partners Section */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -85,8 +93,7 @@ export default function Home() {
               Referent:innen aus ganz Deutschland
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Bei uns treten ganz ganz tolle Referent:innen aus ganz Deutschland auf. 
-              Wir haben sowieso die besten Referent:innen allerzeiten. Jemals.
+              Wir arbeiten mit renommierten Expertinnen und Experten aus Kliniken der Region zusammen.
             </p>
             <div className="mt-8">
               <Button
@@ -105,7 +112,7 @@ export default function Home() {
             className="mt-12"
           />
         </div>
-      </div> */}
+      </div>
 
       {/* Newsletter Section */}
       <div className="py-16 bg-blue-600">
