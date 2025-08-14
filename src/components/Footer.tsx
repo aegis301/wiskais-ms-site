@@ -12,7 +12,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-4 text-gray-300">
-              Repetitoriumsveranstaltungen Münster - Website der münsteraner Anästhesie- und Intensivmedizin Repetitorien.
+              Wissenschaftlicher Kreis Münster - Website des Wissenschaftlichen Arbeitskreises der Klinik für Anästhesiologie, operative Intensivmedizin und Schmerzmedizin der Uniklinik Münster.
             </p>
           </div>
 
