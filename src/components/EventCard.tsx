@@ -1,10 +1,23 @@
 import Image from "next/image";
-import { Event } from "@/types";
+import { BaseComponentProps } from "@/types/common";
 import StatusBadge from "./StatusBadge";
 import Button from "./Button";
 
-interface EventCardProps {
-  event: Event;
+// Legacy Event interface for backward compatibility
+// TODO: Consider migrating to EventTypeCard for new implementations
+interface LegacyEvent {
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  image: string;
+  status: "upcoming" | "ongoing" | "completed" | "cancelled";
+  registrationOpen: boolean;
+}
+
+interface EventCardProps extends BaseComponentProps {
+  event: LegacyEvent;
 }
 
 export default function EventCard({ event }: EventCardProps) {
@@ -70,7 +83,7 @@ export default function EventCard({ event }: EventCardProps) {
             </Button>
           ) : (
             <Button
-              variant="disabled"
+              variant="ghost"
               disabled
               className="flex-1 text-center"
             >

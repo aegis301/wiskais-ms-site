@@ -1,6 +1,8 @@
 import { ChangeEvent } from 'react';
+import { BaseComponentProps } from '@/types/common';
+import { FORM_INPUT_CLASSES } from '@/constants/design';
 
-interface FormInputProps {
+interface FormInputProps extends BaseComponentProps {
   id: string;
   name: string;
   label: string;
@@ -9,8 +11,8 @@ interface FormInputProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  className?: string;
   helpText?: string;
+  error?: boolean;
 }
 
 export default function FormInput({
@@ -23,8 +25,13 @@ export default function FormInput({
   onChange,
   placeholder,
   className = '',
-  helpText
+  helpText,
+  error = false
 }: FormInputProps) {
+  const inputClasses = error 
+    ? `${FORM_INPUT_CLASSES.BASE} ${FORM_INPUT_CLASSES.ERROR}`
+    : FORM_INPUT_CLASSES.BASE;
+
   return (
     <div className={className}>
       <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
@@ -38,7 +45,7 @@ export default function FormInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        className={inputClasses}
       />
       {helpText && (
         <p className="text-sm text-gray-500 mt-1">

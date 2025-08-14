@@ -1,15 +1,14 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ButtonVariant, ButtonSize, BaseChildrenProps } from '@/types/common';
+import { BUTTON_VARIANTS, BUTTON_SIZES, TRANSITIONS } from '@/constants/design';
 
-interface ButtonProps {
-  children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'disabled';
-  size?: 'sm' | 'md' | 'lg';
+interface ButtonProps extends BaseChildrenProps {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   href?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
-  className?: string;
 }
 
 export default function Button({
@@ -22,25 +21,19 @@ export default function Button({
   disabled = false,
   className = ''
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseClasses = `inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${TRANSITIONS.COLORS}`;
   
-  const variantClasses = {
-    primary: disabled 
-      ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
-      : 'bg-primary text-white hover:bg-blue-700 focus:ring-primary',
-    secondary: disabled 
-      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-      : 'bg-secondary text-primary hover:bg-blue-600 focus:ring-secondary',
-    disabled: 'bg-gray-300 text-gray-500 cursor-not-allowed'
-  };
+  // Map variant to uppercase key
+  const variantKey = variant.toUpperCase() as keyof typeof BUTTON_VARIANTS;
+  const variantClasses = disabled 
+    ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+    : BUTTON_VARIANTS[variantKey];
   
-  const sizeClasses = {
-    sm: 'px-3 py-2 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg'
-  };
+  // Map size to uppercase key
+  const sizeKey = size.toUpperCase() as keyof typeof BUTTON_SIZES;
+  const sizeClasses = BUTTON_SIZES[sizeKey];
   
-  const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const combinedClasses = `${baseClasses} ${variantClasses} ${sizeClasses} ${className}`;
   
   if (href && !disabled) {
     return (

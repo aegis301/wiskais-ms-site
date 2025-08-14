@@ -5,46 +5,11 @@
  * upcoming events, and scheduled dates.
  */
 
-export interface EventType {
-  id: string;
-  title: string;
-  shortTitle: string;
-  description: string;
-  topics: string[];
-  features: string[];
-  cmePoints: number;
-  image: string;
-  category: 'meeting' | 'symposium' | 'repetitorium' | 'workshop';
-}
-
-export interface ScheduledEvent {
-  id: string;
-  eventTypeId: string;
-  title: string;
-  date: string;
-  endDate?: string;
-  location: string;
-  locationDetails?: string;
-  status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled';
-  registrationOpen: boolean;
-  registrationDeadline?: string;
-  price?: {
-    presence?: number;
-    online?: number;
-    students?: number;
-  };
-  speakers?: string[];
-  schedule?: EventScheduleItem[];
-  maxParticipants?: number;
-  currentParticipants?: number;
-}
-
-export interface EventScheduleItem {
-  time: string;
-  title: string;
-  speaker?: string;
-  type: 'presentation' | 'workshop' | 'break' | 'discussion' | 'networking';
-}
+import { 
+  EventType, 
+  ScheduledEvent, 
+  EventScheduleItem 
+} from '@/types/common';
 
 // Event Types - Core event formats
 export const eventTypes: EventType[] = [

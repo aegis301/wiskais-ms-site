@@ -3,11 +3,10 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { eventTypes } from '@/data/events';
+import { EVENT_CATEGORY_COLORS } from '@/constants/design';
+import { CallbackProps, BaseComponentProps } from '@/types/common';
 
-interface EventsDropdownProps {
-  className?: string;
-  onLinkClick?: () => void;
-}
+interface EventsDropdownProps extends BaseComponentProps, CallbackProps {}
 
 export default function EventsDropdown({ className = '', onLinkClick }: EventsDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,12 +74,7 @@ export default function EventsDropdown({ className = '', onLinkClick }: EventsDr
                 onClick={handleLinkClick}
               >
                 <div className="flex items-center">
-                  <div className={`w-2 h-2 rounded-full mr-3 ${
-                    eventType.category === 'meeting' ? 'bg-blue-400' :
-                    eventType.category === 'symposium' ? 'bg-purple-400' :
-                    eventType.category === 'repetitorium' ? 'bg-green-400' :
-                    'bg-orange-400'
-                  }`} />
+                  <div className={`w-2 h-2 rounded-full mr-3 ${EVENT_CATEGORY_COLORS[eventType.category]}`} />
                   <div>
                     <div className="font-medium">{eventType.shortTitle}</div>
                     <div className="text-xs text-gray-500 capitalize">{eventType.category}</div>
