@@ -6,11 +6,19 @@ import { eventTypes } from '@/data/events';
 
 interface EventsDropdownProps {
   className?: string;
+  onLinkClick?: () => void;
 }
 
-export default function EventsDropdown({ className = '' }: EventsDropdownProps) {
+export default function EventsDropdown({ className = '', onLinkClick }: EventsDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -29,19 +37,11 @@ export default function EventsDropdown({ className = '' }: EventsDropdownProps) 
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white focus:outline-none focus:shadow-outline transition-colors duration-200 flex items-center"
+        className="px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white focus:outline-none focus:shadow-outline transition-colors duration-200"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         Veranstaltungen
-        <svg 
-          className={`ml-1 h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-        </svg>
       </button>
 
       {isOpen && (
@@ -51,7 +51,7 @@ export default function EventsDropdown({ className = '' }: EventsDropdownProps) 
             <Link
               href="/events"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200"
-              onClick={() => setIsOpen(false)}
+              onClick={handleLinkClick}
             >
               <div className="flex items-center">
                 <svg className="w-4 h-4 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export default function EventsDropdown({ className = '' }: EventsDropdownProps) 
                 key={eventType.id}
                 href={`/events/${eventType.id}`}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                onClick={handleLinkClick}
               >
                 <div className="flex items-center">
                   <div className={`w-2 h-2 rounded-full mr-3 ${
