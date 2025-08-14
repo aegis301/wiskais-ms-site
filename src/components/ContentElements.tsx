@@ -5,7 +5,6 @@ interface ContentElementsProps {
   imageSrc?: string;
   imageAlt?: string;
   imagePosition?: 'left' | 'right' | 'top';
-  maxWidth?: 'md' | 'lg' | 'xl' | '2xl' | 'full';
   className?: string;
   children: ReactNode;
 }
@@ -33,33 +32,20 @@ export default function ContentElements({
   imageSrc, 
   imageAlt, 
   imagePosition = 'right',
-  maxWidth = 'lg',
   className = '',
   children 
 }: ContentElementsProps) {
-  const maxWidthClasses = {
-    'md': 'max-w-4xl',
-    'lg': 'max-w-5xl',
-    'xl': 'max-w-6xl',
-    '2xl': 'max-w-7xl',
-    'full': 'max-w-none'
-  };
-
-  const containerClass = `mx-auto px-4 sm:px-6 lg:px-8 py-12 ${maxWidthClasses[maxWidth]} ${className}`;
-
   if (!imageSrc) {
     return (
-      <div className={containerClass}>
-        <div className="prose prose-lg max-w-none">
-          {children}
-        </div>
+      <div className={`prose prose-lg max-w-none ${className}`}>
+        {children}
       </div>
     );
   }
 
   if (imagePosition === 'top') {
     return (
-      <div className={containerClass}>
+      <div className={className}>
         <div className="mb-8">
           <Image
             src={imageSrc}
@@ -77,38 +63,34 @@ export default function ContentElements({
   }
 
   return (
-    <div className={containerClass}>
-      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
-        imagePosition === 'left' ? 'lg:grid-cols-2' : ''
-      }`}>
-        {imagePosition === 'left' && (
-          <div className="order-first lg:order-first">
-            <Image
-              src={imageSrc}
-              alt={imageAlt || ''}
-              width={600}
-              height={400}
-              className="w-full h-80 object-cover rounded-lg shadow-lg"
-            />
-          </div>
-        )}
-        
-        <div className="prose prose-lg max-w-none">
-          {children}
+    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${className}`}>
+      {imagePosition === 'left' && (
+        <div className="order-first lg:order-first">
+          <Image
+            src={imageSrc}
+            alt={imageAlt || ''}
+            width={600}
+            height={400}
+            className="w-full h-80 object-cover rounded-lg shadow-lg"
+          />
         </div>
-        
-        {imagePosition === 'right' && (
-          <div className="order-first lg:order-last">
-            <Image
-              src={imageSrc}
-              alt={imageAlt || ''}
-              width={600}
-              height={400}
-              className="w-full h-80 object-cover rounded-lg shadow-lg"
-            />
-          </div>
-        )}
+      )}
+      
+      <div className="prose prose-lg max-w-none">
+        {children}
       </div>
+      
+      {imagePosition === 'right' && (
+        <div className="order-first lg:order-last">
+          <Image
+            src={imageSrc}
+            alt={imageAlt || ''}
+            width={600}
+            height={400}
+            className="w-full h-80 object-cover rounded-lg shadow-lg"
+          />
+        </div>
+      )}
     </div>
   );
 }
