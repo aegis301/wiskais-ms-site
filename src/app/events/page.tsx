@@ -32,7 +32,7 @@ export default function Events() {
         </div>
 
         {/* Event Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 items-stretch">
           {eventTypes.map((eventType) => {
             const upcomingEvents = getScheduledEventsByType(eventType.id)
               .filter(event => event.status === 'upcoming' || event.status === 'ongoing');
