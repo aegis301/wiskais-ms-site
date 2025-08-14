@@ -42,18 +42,17 @@ const contentSections = [
   {
     title: "Wer wir sind",
     content: [
-      "Ut sint proident et reprehenderit amet nisi. Reprehenderit minim incididunt nisi eu.",
-      "Est amet sunt anim quis commodo nostrud occaecat fugiat mollit deserunt est aliqua minim aute sunt. Amet fugiat nisi eiusmod do cupidatat proident officia tempor et cillum exercitation. Ex elit sint in ex et ad amet veniam.",
+      "WISKAIS ist ein regionaler Zusammenschluss von medizinischen Fachkräften der Region Münster, der die Vielfalt der Anästhesiologie in Weiterbildungsprogrammen abbildet.",
     ],
     imageSrc: "/images/pages/rtw.jpg",
-    imageAlt: "Medical Monitor",
+    imageAlt: "RTW",
     imageOnLeft: true
   },
   {
     title: "Was wir machen",
-    content: "Do eiusmod amet occaecat in Lorem cupidatat irure voluptate ad occaecat magna aliquip et. Officia cillum reprehenderit velit aliquip esse. Tempor ipsum amet laborum proident incididunt adipisicing pariatur dolor aute eiusmod. Est ea eu enim ex irure reprehenderit veniam reprehenderit et.",
+    content: "Wir bieten hochwertige Weiterbildungsformate in Anästhesiologie, Intensiv- und Schmerzmedizin, die praxisnahes Wissen und persönlichen Austausch fördern.",
     imageSrc: "/images/pages/rtw.jpg",
-    imageAlt: "Medical Syringes",
+    imageAlt: "RTW",
     imageOnLeft: false
   }
 ];
