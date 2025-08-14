@@ -30,7 +30,7 @@ export default function Button({
       : 'bg-primary text-white hover:bg-blue-700 focus:ring-primary',
     secondary: disabled 
       ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-      : 'bg-secondary text-white hover:bg-blue-600 focus:ring-secondary',
+      : 'bg-secondary text-primary hover:bg-blue-600 focus:ring-secondary',
     disabled: 'bg-gray-300 text-gray-500 cursor-not-allowed'
   };
   
