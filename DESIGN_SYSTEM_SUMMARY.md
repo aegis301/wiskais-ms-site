@@ -85,7 +85,7 @@ font-family: var(--font-sans);
 
 ### Design System Structure
 
-```
+```plaintext
 src/
 ├── styles/
 │   ├── design-tokens.ts     # Core tokens (colors, typography, spacing)
