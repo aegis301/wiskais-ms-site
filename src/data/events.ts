@@ -33,7 +33,7 @@ export const eventTypes: EventType[] = [
       'ÄKWL-zertifiziert'
     ],
     cmePoints: 4,
-    image: '/images/events/rtw.jpg',
+    image: '/images/events/aoa.png',
     category: 'meeting'
   },
   {
@@ -58,7 +58,7 @@ export const eventTypes: EventType[] = [
       'ÄKWL-zertifiziert'
     ],
     cmePoints: 8,
-    image: '/images/events/rtw.jpg',
+    image: '/images/events/aoas.png',
     category: 'symposium'
   },
   {
@@ -86,7 +86,7 @@ export const eventTypes: EventType[] = [
       'ÄKWL-zertifiziert'
     ],
     cmePoints: 20,
-    image: '/images/events/rtw.jpg',
+    image: '/images/events/repa.png',
     category: 'repetitorium'
   },
   {
@@ -114,7 +114,7 @@ export const eventTypes: EventType[] = [
       'ÄKWL-zertifiziert'
     ],
     cmePoints: 15,
-    image: '/images/events/rtw.jpg',
+    image: '/images/events/repi.png',
     category: 'repetitorium'
   }
 ];
