@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
 
 export const metadata = {
   title: "Über uns - MSREP",
@@ -8,19 +9,11 @@ export const metadata = {
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="bg-gray-200 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-              Über uns
-            </h1>
-            <p className="mt-4 text-xl text-gray-600">
-              Erfahren Sie mehr über unsere Repetitoriumsveranstaltungen
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="Über uns"
+        description="Erfahren Sie mehr über unsere Repetitoriumsveranstaltungen"
+        backgroundClass="bg-gray-200"
+      />
 
       {/* Content Section */}
       <div className="py-16">

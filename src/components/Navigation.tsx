@@ -13,14 +13,14 @@ export default function Navigation() {
         <div className="flex flex-row items-center justify-between p-4">
           <Link href="/" className="flex text-gray-100 transition duration-1000 ease-in-out group">
             <Image 
-              src="/images/Logo.svg" 
-              alt="MSREP Logo" 
+              src="/images/global/Logo_WISKAIS.png" 
+              alt="WISKAIS Logo" 
               width={36} 
               height={36}
               className="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70" 
             />
             <div className="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
-              MSREP
+              WISKAIS
             </div>
           </Link>
           <button 
