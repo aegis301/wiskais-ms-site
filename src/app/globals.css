@@ -109,3 +109,129 @@ body {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
+
+/* React Big Calendar custom styles */
+.calendar-custom .rbc-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  padding: 12px 8px;
+}
+
+.calendar-custom .rbc-month-view {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-custom .rbc-date-cell {
+  text-align: right;
+  padding: 8px;
+}
+
+.calendar-custom .rbc-today {
+  background-color: #eff6ff;
+}
+
+.calendar-custom .rbc-off-range-bg {
+  background-color: #f9fafb;
+}
+
+.calendar-custom .rbc-event {
+  border-radius: 4px;
+  border: none;
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.calendar-custom .rbc-selected {
+  background-color: #2563eb !important;
+}
+
+.calendar-custom .rbc-toolbar {
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calendar-custom .rbc-toolbar button {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.calendar-custom .rbc-toolbar button:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.calendar-custom .rbc-toolbar button.rbc-active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.calendar-custom .rbc-toolbar button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.calendar-custom .rbc-toolbar-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.calendar-custom .rbc-time-view .rbc-time-gutter {
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+}
+
+.calendar-custom .rbc-time-slot {
+  border-top: 1px solid #f3f4f6;
+}
+
+.calendar-custom .rbc-current-time-indicator {
+  background-color: #ef4444;
+  height: 2px;
+}
+
+/* Week and day view improvements */
+.calendar-custom .rbc-time-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.calendar-custom .rbc-time-header .rbc-header {
+  border-left: 1px solid #e5e7eb;
+}
+
+.calendar-custom .rbc-day-slot .rbc-event {
+  border-left: 3px solid;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .calendar-custom .rbc-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .calendar-custom .rbc-toolbar > span {
+    margin: 5px 0;
+  }
+  
+  .calendar-custom .rbc-toolbar button {
+    margin: 2px;
+    font-size: 14px;
+  }
+  
+  .calendar-custom .rbc-month-view {
+    font-size: 12px;
+  }
+}

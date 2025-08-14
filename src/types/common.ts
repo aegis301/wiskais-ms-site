@@ -110,6 +110,43 @@ export interface EventPrice {
 }
 
 // ==========================================
+// CALENDAR-RELATED TYPES
+// ==========================================
+
+/**
+ * Calendar event for React Big Calendar
+ */
+export interface CalendarEvent {
+  id: string;
+  title: string;
+  start: Date;
+  end: Date;
+  allDay?: boolean;
+  eventTypeId: string;
+  status: EventStatus;
+  registrationOpen: boolean;
+  location: string;
+  resource?: {
+    scheduledEvent: ScheduledEvent;
+    eventType: EventType;
+  };
+}
+
+/**
+ * Calendar view types
+ */
+export type CalendarView = 'month' | 'week' | 'work_week' | 'day' | 'agenda';
+
+/**
+ * Calendar event style colors
+ */
+export interface CalendarEventStyle {
+  backgroundColor: string;
+  borderColor: string;
+  color: string;
+}
+
+// ==========================================
 // FORM-RELATED TYPES
 // ==========================================
 
