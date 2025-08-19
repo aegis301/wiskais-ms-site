@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.wiskais.de'),
   title: "WISKAIS - Wissenschaftlicher Arbeitskreis Anästhesie und Intensivmedizin Münster",
   description: "Website des wissenschaftlichen Arbeitskreises Anästhesie und Intensivmedizin Münster (WISKAIS) mit Informationen zu Repetitoriumsveranstaltungen in Anästhesie und Intensivmedizin.",
   keywords: ["Anästhesie", "Intensivmedizin", "Repetitorium", "Münster", "Fortbildung", "WISKAIS"],
