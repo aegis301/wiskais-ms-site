@@ -2,6 +2,7 @@ import PartnerLogos from "@/components/PartnerLogos";
 import HeroSection from "@/components/HeroSection";
 import ContentSection from "@/components/ContentSection";
 import EventTypesSection from "@/components/EventTypesSection";
+import BlogSection from "@/components/BlogSection";
 import Button from "@/components/Button";
 import { eventTypes } from "@/data/events";
 
@@ -88,6 +89,9 @@ export default function Home() {
 
       {/* Event Types Section */}
       <EventTypesSection eventTypes={eventTypes} />
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* Partners Section */}
       <div className="py-16 bg-gray-50">

@@ -15,8 +15,9 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each event type
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const eventType = getEventTypeById(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const eventType = getEventTypeById(id);
   
   if (!eventType) {
     return {
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default function EventTypePage({ params }: { params: { id: string } }) {
-  const eventType = getEventTypeById(params.id);
+export default async function EventTypePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const eventType = getEventTypeById(id);
   
   if (!eventType) {
     notFound();
