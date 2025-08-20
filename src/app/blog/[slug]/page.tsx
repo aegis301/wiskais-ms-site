@@ -6,14 +6,15 @@ import { getBlogPostBySlug, getPublishedBlogPosts, getRecentBlogPosts } from '@/
 import BlogCard from '@/components/BlogCard';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate metadata for the blog post
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   
   if (!post) {
     return {
@@ -44,8 +45,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   const recentPosts = getRecentBlogPosts(3);
 
   if (!post || post.status !== 'published') {

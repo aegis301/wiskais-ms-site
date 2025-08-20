@@ -51,13 +51,13 @@ export default function BlogPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Main Content */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             {/* Featured Post */}
             {featuredPost && (
-              <div className="mb-12">
-                <div className="flex items-center gap-2 mb-4">
+              <div className="mb-16">
+                <div className="flex items-center gap-2 mb-6">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                   <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">
                     Neuester Beitrag
@@ -70,10 +70,10 @@ export default function BlogPage() {
             {/* Regular Posts Grid */}
             {regularPosts.length > 0 && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-10">
                   Weitere Beiträge
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                   {regularPosts.map((post) => (
                     <BlogCard key={post.id} post={post} />
                   ))}

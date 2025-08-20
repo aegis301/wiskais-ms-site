@@ -72,11 +72,11 @@ const BlogCard = ({ post, variant = 'default', className = '' }: BlogCardProps) 
               </span>
               <span className="text-xs text-gray-500">{formatDate(post.publishedAt)}</span>
             </div>
-            <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-              {post.title}
+            <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+              <span className="line-clamp-2">{post.title}</span>
             </h3>
-            <p className="text-sm text-gray-600 mt-1 line-clamp-2">
-              {post.excerpt}
+            <p className="text-sm text-gray-600 mt-1">
+              <span className="line-clamp-2">{post.excerpt}</span>
             </p>
           </div>
         </div>
@@ -103,8 +103,8 @@ const BlogCard = ({ post, variant = 'default', className = '' }: BlogCardProps) 
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(post.category)} mb-2`}>
                 {getCategoryLabel(post.category)}
               </span>
-              <h2 className="text-2xl font-bold text-white mb-2 line-clamp-2">
-                {post.title}
+              <h2 className="text-2xl font-bold text-white mb-2">
+                <span className="line-clamp-2">{post.title}</span>
               </h2>
             </div>
           </div>
@@ -124,8 +124,8 @@ const BlogCard = ({ post, variant = 'default', className = '' }: BlogCardProps) 
             <span>•</span>
             <span>{post.readingTime} Min. Lesezeit</span>
           </div>
-          <p className="text-gray-700 line-clamp-3">
-            {post.excerpt}
+          <p className="text-gray-700">
+            <span className="line-clamp-3">{post.excerpt}</span>
           </p>
           <div className="flex items-center justify-between mt-4">
             <div className="flex flex-wrap gap-1">
@@ -184,11 +184,11 @@ const BlogCard = ({ post, variant = 'default', className = '' }: BlogCardProps) 
           <span>•</span>
           <span>{formatDate(post.publishedAt)}</span>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-          {post.title}
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+          <span className="line-clamp-2">{post.title}</span>
         </h3>
-        <p className="text-gray-600 mb-4 line-clamp-3">
-          {post.excerpt}
+        <p className="text-gray-600 mb-4">
+          <span className="line-clamp-3">{post.excerpt}</span>
         </p>
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1">
